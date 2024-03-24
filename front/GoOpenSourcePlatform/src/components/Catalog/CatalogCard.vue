@@ -2,7 +2,7 @@
 <template>
     <Card style="width: '100%'; overflow: hidden">
         <template #header>
-            <!-- <img alt="user header" :src="avatarURL" /> -->
+            <img alt="user header" :src="avatarURL" />
         </template>
         <template #title>{{ repositoryName }}</template>
          <template #subtitle>
