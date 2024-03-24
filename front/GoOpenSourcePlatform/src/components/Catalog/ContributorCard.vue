@@ -4,13 +4,13 @@
         <img :alt="`${contributorName}'s header`" :src="imageSrc" />
       </template>
       <template #title>
-        {{ contributorName }}
+        {{ this.contributorName }}
       </template>
       <template #content>
       </template>
       <template #footer>
         <div class="flex gap-3 mt-1">
-          <Button label="Go to Repo" class="w-full" icon="pi pi-external-link" @click="goToRepo" />
+          <Button label="Check Github" class="w-full" icon="pi pi-external-link" @click="checkbug"  />
         </div>
       </template>
     </Card>
@@ -26,6 +26,12 @@ export default {
   methods: {
     goToRepo() {
       window.open(this.githubUrl, '_blank');
+    },
+    checkbug () {
+      console.log(this.name);
+      console.log(this.contributorName);
+      console.log(this.imageSrc);
+      console.log(this.githubUrl);
     }
   }
 }

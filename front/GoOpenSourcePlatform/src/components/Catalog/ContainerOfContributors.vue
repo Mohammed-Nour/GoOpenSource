@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="grid">
       <ContributorCard
         v-for="contributor in contributors"
         :key="contributor.id"
-        :contributorName="contributor.contributorName"
-        :imageSrc="contributor.contributorPhoto"
-        :githubUrl="contributor.contributorAccount"
+        :contributorName="contributor.ContributorName"
+        :imageSrc="contributor.ContributorPhoto"
+        :githubUrl="contributor.ContributorAccount"
       />
     </div>
   </template>
@@ -28,7 +28,7 @@
         },
         {
           id: 2,
-          ContributorName: 'John Doe',
+          ContributorName: 'Noor Shahin ',
           ContributorAccount: 'https://github.com/johndoe',
           ContributorPhoto: 'https://primefaces.org/cdn/primevue/images/usercard.png'
         },
@@ -48,14 +48,28 @@
           ContributorAccount: 'https://github.com/johndoe',
           ContributorPhoto: 'https://primefaces.org/cdn/primevue/images/usercard.png'
         },
-      ]
+      ],
     }
   },
+  methods: {
+    showdata() {
+      console.log(JSON.stringify(this.contributors));
+    }
+  },
+  mounted() {
+    this.showdata();
+  }
 
   }
   </script>
   
-  <style>
+  <style scoped>
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
   /* Add styles here */
   </style>
   

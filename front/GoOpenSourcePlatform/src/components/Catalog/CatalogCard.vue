@@ -26,6 +26,7 @@
             <div class="flex gap-3 mt-1">
                 <Button label="Go to Repo" class="w-full" icon="pi pi-external-link" @click="goToRepo" />
                 <DialogContributors></DialogContributors>
+                <Button label="Fork" class="w-full" icon="pi pi-code" @click="goToFork"/>
                 <!-- <Button label="Cancel" severity="secondary" outlined class="w-full" /> -->
             </div>
         </template>
@@ -43,6 +44,11 @@ export default {
   data() {
     return {
      
+    }
+  },
+  methods: {
+    goToFork(){
+        window.open('https://www.github.com', '_blank');
     }
   }
 }

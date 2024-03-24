@@ -1,7 +1,7 @@
 <template>
   <Sidebar v-model:visible="visible" header="Filtering">
       <div class="filter-section">
-      <h3>Filtering by: </h3>
+      <h3>Sorting by: </h3>
       <div class="flex align-items-center">
         <Checkbox v-model="selectedFilters" inputId="stars" value="stars" />
         <label for="stars" class="ml-2"> Stars </label>
@@ -20,6 +20,10 @@
     <div class="filter-section">
       <h3>Language code: </h3>
       <InputText v-model="language" placeholder="Enter language Code..." />
+      <h3>Limit of Projects:</h3>
+      <InputText v-model="limit" placeholder="Enter the Limit of products..." />
+      <h3>Page offset: </h3>
+      <InputText v-model="page" placeholder="Enter the page offset..." />
     </div>
   </Sidebar>
   <Button icon="pi pi-arrow-right" name="Filtering" title="Filtering" @click="visible = true" />

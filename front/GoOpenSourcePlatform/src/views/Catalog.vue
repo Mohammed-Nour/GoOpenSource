@@ -47,6 +47,10 @@ export default {
   },
   data() {
     return {
+      totalRecords : Number, 
+      rows : Number,
+      
+
       products: [
         // Example JSON Data
         {
