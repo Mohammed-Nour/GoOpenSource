@@ -31,8 +31,8 @@
 
             <template #end>
                 <div class="flex align-items-center gap-2">
-                
-                    <Avatar image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" shape="circle" />
+                    <Auth></Auth>
+                    <!-- <Avatar image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" shape="circle" /> -->
                 </div>
             </template>
         </Menubar>
@@ -46,11 +46,13 @@
 <script>
 import Menubar from 'primevue/menubar';
 import Badge from 'primevue/badge';
+import Auth from '../Home/Auth.vue';
 
 export default {
     components :{
         Menubar,
-        Badge
+        Badge,
+        Auth
     },
     data() {
         return {
