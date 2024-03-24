@@ -2,9 +2,9 @@
 <template>
     <Card style="width: '100%'; overflow: hidden">
         <template #header>
-            <img alt="user header" src="https://primefaces.org/cdn/primevue/images/usercard.png" />
+            <!-- <img alt="user header" :src="avatarURL" /> -->
         </template>
-        <template #title>Advanced Card</template>
+        <template #title>{{ repositoryName }}</template>
          <template #subtitle>
             <div class="flex align-items-center">
                 <i color="#fbbf24" class="pi pi-star-fill"></i> 
@@ -18,15 +18,14 @@
 
         <template #content>
             <p class="m-0">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-                quas!
+                {{ descriptions }}
             </p>
         </template>
         <template #footer>
             <div class="flex gap-3 mt-1">
                 <Button label="Go to Repo" class="w-full" icon="pi pi-external-link" @click="goToRepo" />
                 <DialogContributors></DialogContributors>
-                <Button label="Fork" class="w-full" icon="pi pi-code" @click="goToFork"/>
+                <!-- <Button label="Fork" class="w-full" icon="pi pi-code" @click="goToFork"/> -->
                 <!-- <Button label="Cancel" severity="secondary" outlined class="w-full" /> -->
             </div>
         </template>
@@ -40,6 +39,15 @@ export default {
   
   components: {
     DialogContributors,
+  },
+  props: {
+    repositoryID : String,
+    repositoryName: String,
+    forks: String,
+    stars: String,
+    descriptions: String,
+    avatarURL: String,
+    contributorAccount: String
   },
   data() {
     return {

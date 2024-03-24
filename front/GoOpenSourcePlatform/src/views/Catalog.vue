@@ -1,7 +1,7 @@
 <template>
   <div class="projects-catalog">
     <div class="container_filtering_projects">
-      <SiderBar></SiderBar>
+      <SiderBar ref="sidebar" @loading="toggleLoading" @fetched="handleFetchedCatalog" :searchQuery="this.searchQuery"></SiderBar>
       <div class="container_search_products">
         <header class="projects-header">
           <h1>Projects Catalog</h1>
@@ -12,24 +12,29 @@
               placeholder="Search for a product by AI..."
               class="search-input"
             />
-            <button @click="performSearch" class="search-button">Search</button>
+            <button @click="makeQuery" class="search-button">Search</button>
           </div>
         </header>
-        <section class="product-list product-grid">
+        <section v-if="loading === false" class="product-list product-grid">
           <CatalogCard
-            v-for="product in filteredProducts"
-            :key="product.id"
-            :bigTitle="product.big_title"
-            :small-title="product.small_title"
-            :description="product.description"
-            :features="product.features"
-            :primary-color="product.primary_color"
-            :secondary-color="product.secondary_color"
+            v-for="product in cataloging"
+            :key="product",
+            :repositoryName="product.repositoryName",
+    :forks = "product.forks",
+    :stars =  "product.stars",
+    :descriptions = "product.descriptions",
+    :avatarURL= "product.avatarURL",
+    :contributorAccount="product.contributorAccount" 
           ></CatalogCard>
+
           <div class="no-products-container" v-if="filteredProducts.length === 0">
             <p class="no-products">Such project is not available...</p>
           </div>
         </section>
+        <div class="loading-div">
+            <ProgressSpinner v-if="this.loading === true" />
+        </div>
+
         <Paginator :rows="10" :totalRecords="120" :rowsPerPageOptions="[10, 20, 30]"></Paginator>
       </div>
     </div>
@@ -39,7 +44,7 @@
 <script>
 import CatalogCard from '@/components/Catalog/CatalogCard.vue'
 import SiderBar from '@/components/Catalog/SiderBar.vue'
-
+import { ref, defineExpose } from 'vue'
 export default {
   components: {
     CatalogCard,
@@ -49,7 +54,8 @@ export default {
     return {
       totalRecords : Number, 
       rows : Number,
-      
+      loading: false,
+
 
       products: [
         // Example JSON Data
@@ -115,6 +121,7 @@ export default {
         }
       ],
       filteredProducts: [],
+      cataloging: [],
       searchQuery: ''
     }
   },
@@ -122,12 +129,25 @@ export default {
     // Initialize filteredProducts with all products on creation
     this.filteredProducts = this.products
   },
-  watch: {
-    searchQuery(newVal, oldVal) {
-      this.performSearch()
-    }
-  },
+//   watch: {
+//     searchQuery(newVal, oldVal) {
+//       this.performSearch()
+//     }
+//   },
+
   methods: {
+    handleFetchedCatalog(productCatalog) {
+      // Update the catalog data property with the emitted data
+      this.cataloging = productCatalog;
+      console.log("hlllll")
+      console.log(JSON.stringify(this.cataloging))
+      console.log("dffcf")
+
+    },
+    toggleLoading(){
+        console.log("loooad")
+        this.loading = !this.loading
+    },
     performSearch() {
       if (this.searchQuery) {
         this.filteredProducts = this.products.filter(
@@ -138,13 +158,38 @@ export default {
       } else {
         // If search query is empty, show all products
         this.filteredProducts = this.products
-      }
-    }
+      }},
+    makeQuery() {
+        console.log("yes")
+        this.$refs.sidebar.sendFilterRequest();
+        
+        // this.$refs.sidebar.sendFilterRequest;
+    },
+    async fetchData() {
+            try {
+                const response = await Axios.get(`http://91.107.124.108:5173/v1/home/star?limit=${this.limit}&page=${this.currentPage}`);
+                this.products = response.data; // Adjust based on your actual response structure
+                this.currentPage++;
+            } catch (error) {
+                console.error("Error fetching products:", error);
+                // Handle error (e.g., show error message)
+            }
+    },
   }
 }
 </script>
 
 <style scoped>
+
+.loading-div {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .projects-catalog {
   width: 100%;
   display: flex;
