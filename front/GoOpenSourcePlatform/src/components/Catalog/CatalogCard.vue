@@ -25,6 +25,7 @@
         <template #footer>
             <div class="flex gap-3 mt-1">
                 <Button label="Go to Repo" class="w-full" icon="pi pi-external-link" @click="goToRepo" />
+                <DialogContributors></DialogContributors>
                 <!-- <Button label="Cancel" severity="secondary" outlined class="w-full" /> -->
             </div>
         </template>
@@ -32,6 +33,19 @@
 </template>
 
 <script>
+import DialogContributors from '../Catalog/DialogContributors.vue'
+
+export default {
+  
+  components: {
+    DialogContributors,
+  },
+  data() {
+    return {
+     
+    }
+  }
+}
 </script>
 <style>
 .flex.align-items-center {

@@ -26,22 +26,7 @@
 </template>
 
 <script>
-export default {
-  components: {},
-  data() {
-    return {
-      visible: false,
-      selectedFilters: [],
-      language: '',
-      sortOptions: [
-        { name: 'Stars', value: 'stars' },
-        { name: 'Contributors', value: 'contributors' },
-        { name: 'Forks', value: 'forks' },
-        { name: 'Language', value: 'language' }
-      ]
-    }
-  }
-}
+
 </script>
 
 <style scoped>
