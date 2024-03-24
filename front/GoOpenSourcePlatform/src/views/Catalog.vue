@@ -16,7 +16,7 @@
           </div>
         </header>
         <section v-if="loading === false" class="product-list product-grid">
-          <CatalogCard
+          <!-- <CatalogCard
             v-for="product in cataloging"
             :key="product",
             :repositoryName="product.repositoryName",
@@ -25,7 +25,7 @@
     :descriptions = "product.descriptions",
     :avatarURL= "product.avatarURL",
     :contributorAccount="product.contributorAccount" 
-          ></CatalogCard>
+          ></CatalogCard> -->
 
           <div class="no-products-container" v-if="filteredProducts.length === 0">
             <p class="no-products">Such project is not available...</p>
