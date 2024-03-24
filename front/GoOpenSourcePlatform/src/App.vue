@@ -2,10 +2,12 @@
 import { RouterLink, RouterView } from 'vue-router'
 import TheWelcome from '@/components/TheWelcome.vue'
 import NavBar from '@/components/Home/NavBar.vue';
+import Footer from './components/Footer.vue';
 export default {
   components:{
     TheWelcome,
-    NavBar
+    NavBar,
+    Footer
   }
 }
 </script>
@@ -14,7 +16,7 @@ export default {
 
 
 
-    <NavBar></NavBar>
+    <NavBar class="navbar"></NavBar>
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -27,12 +29,41 @@ export default {
     </div> -->
 
   <RouterView />
+  <Footer></Footer>
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
 </template>
 
 
 
 
 <style scoped>
+
+.navbar {
+  z-index: 0;
+}
+
+.circle {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    filter: blur(130px);
+    z-index: 0;
+    opacity: 1;
+}
+
+
+.circle1{
+    background: #06b6d4;
+    left: -20%;
+    top: 60%;
+}
+
+.circle2{
+    background: #06b6d4;
+    right: -20%;
+    top: 20%;
+}
 
 /* header {
   line-height: 1.5;

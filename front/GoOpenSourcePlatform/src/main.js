@@ -1,6 +1,7 @@
 import "primeflex/primeflex.css";
 import "primevue/resources/themes/aura-light-cyan/theme.css";
 import "primevue/resources/primevue.min.css"; /* Deprecated */
+import 'primeicons/primeicons.css'
 import './assets/main.css'
 
 import { createApp } from 'vue'

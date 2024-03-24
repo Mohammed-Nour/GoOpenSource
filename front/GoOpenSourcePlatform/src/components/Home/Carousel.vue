@@ -86,5 +86,8 @@ export default {
     color: black;
 
 }
+.card {
+    margin: 6rem 0 0 0;
+}
 
 </style>
