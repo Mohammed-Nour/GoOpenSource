@@ -3,8 +3,8 @@
    <hr class="line">
   <footer class="footer-info">
     <div class="company-logo">
-      <a id="inno-logo" href="https://innopolis.university/" ><img src="../assets/images/InnopolisULogo.svg" alt="goOS-logo"></a>
-      <a href="https://engineers2030.ru/"><img src="../assets/images/SchoolofAELogo.svg" alt="goOS-logo"></a>
+      <a id="gos-logo" href="https://goopensource.ru/" ><img class="small-logo-gos" src="../assets/public/small-logo-gos.png" alt="goOS-logo"></a>
+      <a href="https://goopensource.ru/"><h1 class="nav-logo-title">GoOpenSource</h1></a>
     </div>
     <div class="footer-navigation">
       <ul class="nav-sections">
@@ -81,8 +81,21 @@
   margin-left: 85px;
 }
 
+#gos-logo {
+  height: 100px;
+}
 
+.small-logo-gos {
+  height: 100px;
+}
 
+.nav-logo-title {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  color: black;
+  font-weight: 700;
+  font-style: normal;
+}
 
 #inno-logo {
   padding-right: 0.5rem;

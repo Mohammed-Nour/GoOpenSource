@@ -36,6 +36,8 @@
     display: block;
     color: black;
     text-align: center;
+    font-weight: 700;
+    
 }
 
 .faq-section {

@@ -30,6 +30,7 @@
             <p class="no-products">Such project is not available...</p>
           </div>
         </section>
+        <Paginator :rows="10" :totalRecords="120" :rowsPerPageOptions="[10, 20, 30]"></Paginator>
       </div>
     </div>
   </div>
