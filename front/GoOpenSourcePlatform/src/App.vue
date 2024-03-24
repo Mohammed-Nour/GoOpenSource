@@ -54,13 +54,13 @@ export default {
 
 
 .circle1{
-    background: #06b6d4;
+    background: #fbbf24;
     left: -20%;
     top: 60%;
 }
 
 .circle2{
-    background: #06b6d4;
+    background: #fbbf24;
     right: -20%;
     top: 20%;
 }

@@ -17,6 +17,27 @@
   text-decoration: none !important;
 }
 
+::-webkit-scrollbar{
+  width: 9px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track{
+
+  background: rgba(255, 255, 255, 0.2) ;
+}
+
+::-webkit-scrollbar-track-piece{
+  background: rgba(255, 255, 255, 0.2)2) ;
+
+
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(transparent, #fbbf24, #fbbf24);
+
+  border-radius: 10px;
+}
 
  /* #app {
   max-width: 1280px;

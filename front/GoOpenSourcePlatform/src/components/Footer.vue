@@ -126,7 +126,7 @@ hr {
     bottom: 0;
     z-index: 1000;
     width: 100%;
-    background-color: #06b6d4;
+    background-color: #fbbf24;
    /* display: none;*/
     display: flex;
     align-items: center;

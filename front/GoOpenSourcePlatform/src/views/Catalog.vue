@@ -160,11 +160,11 @@
     flex-grow: 1;
     width: 436px;
     height: 42px;
-    border-color: #06b6d4;
+    border: none;
      /* Hide the right border */
     padding: 20px;
     border-radius: 30px;
-    color: #06b6d4;
+    color: #fbbf24;
     /* border-top-left-radius: 30px;
     border-bottom-left-radius: 20px; */
     outline: none;
@@ -186,9 +186,9 @@
     transform: translateY(-50%);
     padding: 9px 22px;
     text-align: center;
-    border: 2px solid #06b6d4;
+    border: 2px solid #fbbf24;
     border-radius: 30px;
-    background-color: #06b6d4; /* Adjust the button background color if needed */
+    background-color: #fbbf24; /* Adjust the button background color if needed */
     color: white; /* Adjust the text color if needed */
     cursor: pointer;
     outline: none;
@@ -197,7 +197,7 @@
   
   .search-button:hover {
     background: transparent;
-    color: #06b6d4;
+    color: #fbbf24;
   }
   
   @media (max-width: 768px) {

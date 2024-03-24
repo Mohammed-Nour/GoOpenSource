@@ -13,7 +13,9 @@
             </section>
         </div>
         <div class="col-12 md:col-6 overflow-hidden">
-            <img src="@/assets/images/Home/hero-image-1.png" alt="Image" class="hero-image md:ml-6 block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)" />
+            <!-- <img src="@/assets/images/Home/hero-image-1.svg" alt="Image" class="hero-image md:ml-6 block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)" /> -->
+            <img src="@/assets/images/Home/hero-image-1.svg" alt="Image" class="hero-image md:ml-6 block md:h-full"  />
+
         </div>
     </div>
 </div>
@@ -31,6 +33,10 @@ export default {
 
 .section {
     padding: 0 12.5%;
+}
+
+.hero-image {
+    transform: scale(80%) ;
 }
 
 </style>
