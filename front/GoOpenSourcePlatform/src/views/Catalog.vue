@@ -2,10 +2,9 @@
   <div class="projects-catalog">
     <div class="container_filtering_projects">
       <SiderBar></SiderBar>
-      
-        <div class="container_search_products">
-          <header class="projects-header">
-        <h1>Projects Catalog</h1>
+      <div class="container_search_products">
+        <header class="projects-header">
+          <h1>Projects Catalog</h1>
           <div class="search-bar">
             <input
               type="text"
@@ -16,23 +15,22 @@
             <button @click="performSearch" class="search-button">Search</button>
           </div>
         </header>
-          <section class="product-list product-grid">
-            <CatalogCard
-              v-for="product in filteredProducts"
-              :key="product.id"
-              :bigTitle="product.big_title"
-              :small-title="product.small_title"
-              :description="product.description"
-              :features="product.features"
-              :primary-color="product.primary_color"
-              :secondary-color="product.secondary_color"
-            ></CatalogCard>
-            <div class="no-products-container" v-if="filteredProducts.length === 0">
-              <p class="no-products">Such project is not available...</p>
-            </div>
-          </section>
-        </div>
- 
+        <section class="product-list product-grid">
+          <CatalogCard
+            v-for="product in filteredProducts"
+            :key="product.id"
+            :bigTitle="product.big_title"
+            :small-title="product.small_title"
+            :description="product.description"
+            :features="product.features"
+            :primary-color="product.primary_color"
+            :secondary-color="product.secondary_color"
+          ></CatalogCard>
+          <div class="no-products-container" v-if="filteredProducts.length === 0">
+            <p class="no-products">Such project is not available...</p>
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 </template>
@@ -153,13 +151,13 @@ export default {
 .container_filtering_projects {
   display: flex;
   justify-content: space-between;
-    margin: 0;
-    gap: 5rem;
-    width: 100%;
+  margin: 0;
+  gap: 5rem;
+  width: 80%;
 }
-.container_search_products{
+.container_search_products {
   padding: 0 0;
-    margin: 0 10% 0 0;
+  margin: 0 10% 0 0;
 }
 .product-header {
   display: flex;
@@ -309,14 +307,12 @@ h1 {
   .container_filtering_projects {
     flex-wrap: wrap;
   }
-  .p-card.sidebar{ 
+  .p-card.sidebar {
     height: fit-content;
     width: 100%;
   }
-  .container_search_products{
+  .container_search_products {
     margin: 0 5%;
-  } 
+  }
 }
-
-
 </style>
