@@ -1,6 +1,45 @@
-@import './base.css';
+ @import './base.css';
+ @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')
+ 
+ body, html{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
 
-#app {
+*{
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none !important;
+}
+
+::-webkit-scrollbar{
+  width: 9px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track{
+
+  background: rgba(255, 255, 255, 0.2) ;
+}
+
+::-webkit-scrollbar-track-piece{
+  background: rgba(255, 255, 255, 0.2)2) ;
+
+
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(transparent, #fbbf24, #fbbf24);
+
+  border-radius: 10px;
+}
+
+ /* #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -21,7 +60,7 @@ a,
   }
 }
 
-@media (min-width: 1024px) {
+ @media (min-width: 1024px) {
   body {
     display: flex;
     place-items: center;
@@ -32,4 +71,4 @@ a,
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
-}
+}    */

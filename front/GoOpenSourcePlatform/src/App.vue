@@ -1,11 +1,23 @@
-<script setup>
+<script >
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import TheWelcome from '@/components/TheWelcome.vue'
+import NavBar from '@/components/Home/NavBar.vue';
+import Footer from './components/Footer.vue';
+export default {
+  components:{
+    TheWelcome,
+    NavBar,
+    Footer
+  }
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+
+
+
+    <NavBar class="navbar"></NavBar>
+    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
@@ -14,14 +26,46 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
-    </div>
-  </header>
+    </div> -->
 
   <RouterView />
+  <Footer></Footer>
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
 </template>
 
+
+
+
 <style scoped>
-header {
+
+.navbar {
+  z-index: 0;
+}
+
+.circle {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    filter: blur(130px);
+    z-index: 0;
+    opacity: 1;
+}
+
+
+.circle1{
+    background: #fbbf24;
+    left: -20%;
+    top: 60%;
+}
+
+.circle2{
+    background: #fbbf24;
+    right: -20%;
+    top: 20%;
+}
+
+/* header {
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -81,5 +125,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
